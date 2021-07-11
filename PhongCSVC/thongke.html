@@ -1,0 +1,673 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Thống kê | Hệ thống quản lí vật tư, văn phòng phẩm tại ĐH Sư phạm Kỹ thuật (UTE)</title>
+    <!-- Favicon-->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet"
+        type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="../plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="../plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="../plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="../css/themes/all-themes.css" rel="stylesheet" />
+
+    <link href="../plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Colorpicker Css -->
+    <link href="../plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" />
+
+    <!-- Dropzone Css -->
+    <link href="../plugins/dropzone/dropzone.css" rel="stylesheet">
+
+    <!-- Multi Select Css -->
+    <link href="../plugins/multi-select/css/multi-select.css" rel="stylesheet">
+
+    <!-- Bootstrap Spinner Css -->
+    <link href="../plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
+
+    <!-- Bootstrap Tagsinput Css -->
+    <link href="../plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
+
+    <!-- Bootstrap Select Css -->
+    <link href="../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
+    <!-- noUISlider Css -->
+    <link href="../plugins/nouislider/nouislider.min.css" rel="stylesheet" />
+    <!-- Jquery Core Js -->
+    <script src="../plugins/jquery/jquery.min.js"></script>
+
+
+    <!-- Bổ sung vào head-->
+    <!-- Morris Chart Css-->
+    <link href="../plugins/morrisjs/morris.css" rel="stylesheet" />
+
+    <!-- Morris Plugin Js -->
+    <script src="../plugins/raphael/raphael.min.js"></script>
+    <script src="../plugins/morrisjs/morris.js"></script>
+
+    <!-- ChartJs -->
+    <script src="../plugins/chartjs/Chart.bundle.js"></script>
+
+    <!-- Flot Charts Plugin Js -->
+    <script src="../plugins/flot-charts/jquery.flot.js"></script>
+    <script src="../plugins/flot-charts/jquery.flot.resize.js"></script>
+    <script src="../plugins/flot-charts/jquery.flot.pie.js"></script>
+    <script src="../plugins/flot-charts/jquery.flot.categories.js"></script>
+    <script src="../plugins/flot-charts/jquery.flot.time.js"></script>
+
+    <!-- Sparkline Chart Plugin Js -->
+    <script src="../plugins/jquery-sparkline/jquery.sparkline.js"></script>
+    <!-- Jquery CountTo Plugin Js -->
+    <script src="../plugins/jquery-countto/jquery.countTo.js"></script>
+</head>
+
+<body class="theme-red">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <div class="search-icon">
+            <i class="material-icons">search</i>
+        </div>
+        <input type="text" placeholder="Tìm kiếm tài khoản...">
+        <div class="close-search">
+            <i class="material-icons">close</i>
+        </div>
+    </div>
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="khoapb.html">UTE ADMIN - HỆ THỐNG QUẢN LÍ VẬT TƯ</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Call Search -->
+                    <li><a href="javascript:void(0);" class="js-search" data-close="true"><i
+                                class="material-icons">search</i></a></li>
+                    <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i
+                                class="material-icons">more_vert</i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- User Info -->
+            <div class="user-info">
+                <div class="image">
+                    <img src="../images/user.png" width="48" height="48" alt="User" />
+                </div>
+                <div class="info-container">
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
+                    <div class="email">john.doe@example.com</div>
+                    <div class="btn-group user-helper-dropdown">
+                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="true">keyboard_arrow_down</i>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="khoapb.html"><i class="material-icons">person</i>Profile</a></li>
+                            <li role="seperator" class="divider"></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">input</i>Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- #User Info -->
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                    <li class="header">MAIN NAVIGATION</li>
+                    <li>
+                        <a href="khoapb.html">
+                            <i class="material-icons">info</i>
+                            <span>Thông tin tài khoản</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="phieudenghi.html">
+                            <i class="material-icons">edit_note</i>
+                            <span>Phiếu đề nghị</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="phieubangiao.html">
+                            <i class="material-icons">topic</i>
+                            <span>Phiếu bàn giao</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="vattu.html">
+                            <i class="material-icons">show_chart</i>
+                            <span>Hạn mức</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="vattu.html">
+                            <i class="material-icons">handyman</i>
+                            <span>Vật tư</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="thongke.html">
+                            <i class="material-icons">equalizer</i>
+                            <span>Thống kê</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html">
+                            <i class="material-icons">input</i>
+                            <span>Đăng xuất</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- #Menu -->
+            <!-- Footer -->
+            <div class="legal">
+                <div class="copyright">
+                    &copy; 2021 <a href="javascript:void(0);">UTE ĐÀ NẴNG</a>.
+                </div>
+                <div class="version">
+                    <b>Version: </b> 1.0
+                </div>
+            </div>
+            <!-- #Footer -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="block-header" style="float: left;">
+                <div id="reportrange"
+                    style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+                    <i class="material-icons" style="font-size: 13px;">date_range</i>&nbsp;
+                    <span id="DatePicker"></span> <i class="material-icons" style="font-size: 13px;">arrow_drop_down</i>
+                </div>
+            </div>
+            <ol class="breadcrumb" style="float: right;">
+                <li>
+                    <a href="khoapb.html">
+                        <i class="material-icons">home</i> Trang chủ
+                    </a>
+                </li>
+                <li class="active">
+                    <i class="material-icons">equalizer</i> Thống kê
+                </li>
+            </ol>
+            <br><br><br>
+
+            <!-- Widgets -->
+            <div class="row clearfix">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-pink hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">shopping_bag</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">Mua sắm</div>
+                            <div class="number count-to" data-from="0" data-to="125" data-speed="1000"
+                                data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-cyan hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">handyman</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">Sửa chữa</div>
+                            <div class="number count-to" data-from="0" data-to="125" data-speed="1000"
+                                data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-light-green hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">done</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">Sửa hoàn tất</div>
+                            <div class="number count-to" data-from="0" data-to="125" data-speed="1000"
+                                data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-orange hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">dangerous</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">Thiết bị hỏng</div>
+                            <div class="number count-to" data-from="0" data-to="125" data-speed="1000"
+                                data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Widgets -->
+
+
+            <div class="row clearfix">
+                <!-- Tình hình mua sắm, sửa chữa ở các khoa, phòng ban -->
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="card">
+                        <div class="header">
+                            <h2>TÌNH HÌNH MUA SẮM & SỬA CHỮA</h2>
+                        </div>
+                        <div class="body">
+                            <div class="table-responsive">
+                                <table class="table table-hover dashboard-task-infos">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Khoa</th>
+                                            <th>Mua sắm</th>
+                                            <th>Sửa chữa</th>
+                                            <th>Xu hướng</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Điện - Điện Tử</td>
+                                            <td>100 phiếu</td>
+                                            <td>90 phiếu</td>
+                                            <td>
+                                                <i class="material-icons">trending_up</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Điện - Điện Tử</td>
+                                            <td>10 phiếu</td>
+                                            <td>90 phiếu</td>
+                                            <td>
+                                                <i class="material-icons">trending_up</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Điện - Điện Tử</td>
+                                            <td>100 phiếu</td>
+                                            <td>90 phiếu</td>
+                                            <td>
+                                                <i class="material-icons">trending_down</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Điện - Điện Tử</td>
+                                            <td>100 phiếu</td>
+                                            <td>90 phiếu</td>
+                                            <td>
+                                                <i class="material-icons">trending_flat</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Điện - Điện Tử</td>
+                                            <td>100 phiếu</td>
+                                            <td>90 phiếu</td>
+                                            <td>
+                                                <i class="material-icons">trending_down</i>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Tình hình mua sắm các khoa, phòng ban -->
+
+                <!-- Tỉ lệ sửa chữa -->
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="header">
+                            <h2>TỈ LỆ SỬA CHỮA THIẾT BỊ</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
+                                        role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div id="donut_chart" class="dashboard-donut-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Tỉ lệ sửa chữa -->
+            </div>
+
+            <div class="row clearfix">
+                <!-- Mua sắm -->
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="card">
+                        <div class="body bg-cyan">
+                            <div class="font-bold m-b-35">MUA SẮM VĂN PHÒNG PHẨM</div>
+                            <div class="sparkline" data-type="line" data-spot-Radius="4"
+                                data-highlight-Spot-Color="rgb(233, 30, 99)" data-highlight-Line-Color="#fff"
+                                data-min-Spot-Color="rgb(255,255,255)" data-max-Spot-Color="rgb(255,255,255)"
+                                data-spot-Color="rgb(255,255,255)" data-offset="90" data-width="100%" data-height="92px"
+                                data-line-Width="2" data-line-Color="rgba(255,255,255,0.7)"
+                                data-fill-Color="rgba(0, 188, 212, 0)">
+                                1,5,90,342,4225,8752
+                            </div>
+                            <ul class="dashboard-stat-list">
+                                <li>
+                                    Hôm nay
+                                    <span class="pull-right"><b>1</b> <small> ĐỀ NGHỊ</small></span>
+                                </li>
+                                <li>
+                                    Hôm qua
+                                    <span class="pull-right"><b>5</b> <small> ĐỀ NGHỊ</small></span>
+                                </li>
+                                <li>
+                                    Tuần này
+                                    <span class="pull-right"><b>90</b> <small> ĐỀ NGHỊ</small></span>
+                                </li>
+                                <li>
+                                    Học kỳ này
+                                    <span class="pull-right"><b>342</b> <small> ĐỀ NGHỊ</small></span>
+                                </li>
+                                <li>
+                                    Năm học này
+                                    <span class="pull-right"><b>4225</b> <small> ĐỀ NGHỊ</small></span>
+                                </li>
+                                <li>
+                                    Toàn bộ
+                                    <span class="pull-right"><b>8752</b> <small> ĐỀ NGHỊ</small></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Mua sắm -->
+                <!-- Số lượng sửa chũa -->
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="card">
+                        <div class="body bg-teal">
+                            <div class="font-bold m-b-35">SỬA CHỮA THIẾT BỊ VĂN PHÒNG</div>
+                            <div class="sparkline" data-type="line" data-spot-Radius="4"
+                                data-highlight-Spot-Color="rgb(233, 30, 99)" data-highlight-Line-Color="#fff"
+                                data-min-Spot-Color="rgb(255,255,255)" data-max-Spot-Color="rgb(255,255,255)"
+                                data-spot-Color="rgb(255,255,255)" data-offset="90" data-width="100%" data-height="92px"
+                                data-line-Width="2" data-line-Color="rgba(255,255,255,0.7)"
+                                data-fill-Color="rgba(0, 188, 212, 0)">
+                                8752,5,90,342,4225,8752
+                            </div>
+                            <ul class="dashboard-stat-list">
+                                <li>
+                                    Hôm nay
+                                    <span class="pull-right"><b>8752</b> <small> ĐỀ NGHỊ</small></span>
+                                </li>
+                                <li>
+                                    Hôm qua
+                                    <span class="pull-right"><b>5</b> <small> ĐỀ NGHỊ</small></span>
+                                </li>
+                                <li>
+                                    Tuần này
+                                    <span class="pull-right"><b>90</b> <small> ĐỀ NGHỊ</small></span>
+                                </li>
+                                <li>
+                                    Học kỳ này
+                                    <span class="pull-right"><b>342</b> <small> ĐỀ NGHỊ</small></span>
+                                </li>
+                                <li>
+                                    Năm học này
+                                    <span class="pull-right"><b>4225</b> <small> ĐỀ NGHỊ</small></span>
+                                </li>
+                                <li>
+                                    Toàn bộ
+                                    <span class="pull-right"><b>8752</b> <small> ĐỀ NGHỊ</small></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Số lượng sửa chũa -->
+            </div>
+
+            <!-- Các đề nghị mới nhất -->
+            <div class="clearfix">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>ĐỀ NGHỊ CHƯA DUYỆT MỚI NHẤT</h2>
+                        </div>
+                        <div class="body">
+                            <div class="table-responsive">
+                                <table class="table table-hover dashboard-task-infos">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Người yêu cầu</th>
+                                            <th>Khoa/Phòng ban</th>
+                                            <th>Trạng thái</th>
+                                            <th>Thao tác</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Nguyễn Văn A</td>
+                                            <td>Điện - Điện Tử</td>
+                                            <td>Chờ duyệt</td>
+                                            <td>
+                                                <a href="xemchitiet2.html" class="btn btn-default waves-effect">
+                                                    Xem chi tiết
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Nguyễn Văn A</td>
+                                            <td>Điện - Điện Tử</td>
+                                            <td>Chờ duyệt</td>
+                                            <td>
+                                                <a href="xemchitiet2.html" class="btn btn-default waves-effect">
+                                                    Xem chi tiết
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Nguyễn Văn A</td>
+                                            <td>Điện - Điện Tử</td>
+                                            <td>Chờ duyệt</td>
+                                            <td>
+                                                <a href="xemchitiet2.html" class="btn btn-default waves-effect">
+                                                    Xem chi tiết
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Nguyễn Văn A</td>
+                                            <td>Điện - Điện Tử</td>
+                                            <td>Chờ duyệt</td>
+                                            <td>
+                                                <a href="xemchitiet2.html" class="btn btn-default waves-effect">
+                                                    Xem chi tiết
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Nguyễn Văn A</td>
+                                            <td>Điện - Điện Tử</td>
+                                            <td>Chờ duyệt</td>
+                                            <td>
+                                                <a href="xemchitiet2.html" class="btn btn-default waves-effect">
+                                                    Xem chi tiết
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Các đề nghị mới nhất -->
+        </div>
+    </section>
+
+    <!-- Script Bổ sung -->
+    <script>
+        function initDonutChart() {
+            Morris.Donut({
+                element: 'donut_chart',
+                data: [{
+                    label: 'Thành công',
+                    value: 70
+                }, {
+                    label: 'Không sửa được',
+                    value: 30
+                }],
+                colors: ['rgb(233, 30, 99)', 'rgb(0, 188, 212)', 'rgb(255, 152, 0)', 'rgb(0, 150, 136)', 'rgb(96, 125, 139)'],
+                formatter: function (y) {
+                    return y + '%'
+                }
+            });
+        }
+    </script>
+    <script src="../js/pages/index.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script type="text/javascript">
+        $(function () {
+
+            var start = moment().subtract(0, 'days');
+            var end = moment();
+
+            function cb(start, end) {
+                $('#reportrange span').html(start.format('DD/MM/YYYY') + ' - ' + end.format('DD/MM/YYYY'));
+            }
+
+            $('#reportrange').daterangepicker({
+                startDate: start,
+                endDate: end,
+                ranges: {
+                    'Hôm nay': [moment(), moment()],
+                    'Hôm qua': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    '7 ngày trước': [moment().subtract(6, 'days'), moment()],
+                    '30 ngày trước': [moment().subtract(29, 'days'), moment()],
+                    'Tháng này': [moment().startOf('month'), moment().endOf('month')],
+                    'Tháng trước': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                }
+            }, cb);
+
+            cb(start, end);
+
+        });
+        $("#DatePicker").on('DOMSubtreeModified', function () {
+            alert($(this).html());
+        });
+    </script>
+    <!-- End Script Bổ sung -->
+
+
+    <!-- Bootstrap Core Js -->
+    <script src="../plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="../plugins/node-waves/waves.js"></script>
+
+    <!-- Custom Js -->
+    <script src="../js/admin.js"></script>
+
+
+    <!-- Bootstrap Colorpicker Js -->
+    <script src="../plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+
+    <!-- Dropzone Plugin Js -->
+    <script src="../plugins/dropzone/dropzone.js"></script>
+
+    <!-- Input Mask Plugin Js -->
+    <script src="../plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+
+    <!-- Multi Select Plugin Js -->
+    <script src="../plugins/multi-select/js/jquery.multi-select.js"></script>
+
+    <!-- Jquery Spinner Plugin Js -->
+    <script src="../plugins/jquery-spinner/js/jquery.spinner.js"></script>
+
+    <!-- Bootstrap Tags Input Plugin Js -->
+    <script src="../plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+
+    <!-- noUISlider Plugin Js -->
+    <script src="../plugins/nouislider/nouislider.js"></script>
+
+    <script src="../js/pages/forms/advanced-form-elements.js"></script>
+
+    <!-- Demo Js -->
+    <script src="../js/demo.js"></script>
+
+
+</body>
+
+</html>
